@@ -1,0 +1,5 @@
+function subtract_function() {
+  original_text = document.getElementById("demo").innerHTML
+if(original_text == "Nothing"){
+  clear_function();
+}

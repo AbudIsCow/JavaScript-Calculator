@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Calculator</title>
+      <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <style>
+      body {
+        background-color: SkyBlue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Calculator</h1>
+    <div>
+      <p id='demo'>[Answer Will Apear Here As]</p>
+      <p>Answer Will Be In This Form: Input 1 (Function) Input 2.</p>
+    </div>
+    <div>
+      <p>Input 1:</p>
+      <input type="text" id="input_a"><br><br>
+      <p>Input 2:</p>
+      <input type="text" id="input_b"><br><br>
+      <button type="button" onclick="add_function()">Addition</button>
+      <button type="button" onclick="subtract_function()">Subtraction</button>
+      <button type="button" onclick="multiply_function()">Multiplication</button>
+      <button type="button" onclick="divide_function()">Division</button>
+      <button type="button" onclick="power_function()">Power</button>
+      <button type="button" onclick="root()">Root</button>
+      <button type="button" onclick="clear_function()">Clear</button>
+    </div>
+    <h2>Notes:</h2>
+    <p>Addition: Input 2 Will Be Added To Input 1.</p>
+    <p>Subtraction: Input 2 Will Be Subtracted To Input 1.</p>
+    <p>Multiplication Input 1 Will Be Multiplied By Input 2.:</p>
+    <p>Division: Input 1 Will Be Divided By Input 2.</p>
+    <p>Power: Input 1 Will Be Raised To The Power Of 2.</p>
+    <p>Root: Input 1 Will Be The Radicand And Input 2 Will Be The Index.</p>
+    <p>Clear: The Answer Text Will Be Set To The Orignal Text.</p>
+    <script>
+
+      function add_function() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)+parseInt(input_b);
+        html_text = input_a + " + " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+      function subtract_function() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)-parseInt(input_b);
+        html_text = input_a + " - " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+      function multiply_function() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)*parseInt(input_b);
+        html_text = input_a + " x " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+      function divide_function() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)/parseInt(input_b);
+        html_text = input_a + " / " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+      function power_function() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)**parseInt(input_b);
+        html_text = input_a + " ^ " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+      function root() {
+        original_text = document.getElementById("demo").innerHTML
+        if(original_text == "Nothing"){
+          clear_function();
+        }
+
+        input_a =  document.getElementById("input_a").value;
+        input_b =  document.getElementById("input_b").value;
+        result_text = parseInt(input_a)**(1/parseInt(input_b));
+        html_text = input_a + " √ " + input_b + " = " + result_text;
+        document.getElementById("demo").innerHTML = html_text;
+      }
+
+
+      function clear_function() {
+        document.getElementById("demo").innerHTML = "[Answer Will Apear Here]";
+      }
+    </script>
+  </body>
+</html>
